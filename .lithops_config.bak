@@ -1,0 +1,36 @@
+lithops: 
+    storage: ibm_cos
+    storage_bucket: lithops-bucket-habib01
+    mode: serverless
+    #rabbitmq_monitor: <True/False>
+    #data_cleaner: <True/False>
+    #workers: <MAX_NUM_OF_WORKERS>
+    #data_limit: 4  # in MiB
+    #execution_timeout: 1800
+    #include_modules: <LIST_OF_MODULES>
+    #exclude_modules: <LIST_OF_MODULES>
+
+serverless:
+    backend: ibm_cf
+    #runtime : ibmfunctions/lithops-ce-3.8.5-2.2.2:1.0.0
+    #runtime_timeout: 600
+    #runtime_memory: 256
+    #remote_invoker: True
+
+ibm:
+   iam_api_key: cLQhHWR28nlJaGOqo7j87L5akzoCizqQPvH_XooHHo3h
+
+#code_engine:
+    #kubectl_config: kubecontext.yaml
+
+ibm_cf:
+    endpoint     : https://us-south.functions.cloud.ibm.com
+    namespace    : Namespace-H5L
+    namespace_id : 7fd17f8c-4a89-4d08-9529-f9aa7737c52d
+
+ibm_cos:
+    endpoint    : https://s3.jp-tok.cloud-object-storage.appdomain.cloud
+    private_endpoint: https://s3.private.jp-tok.cloud-object-storage.appdomain.cloud
+    api_key     : jlFa8a1ERFLryXzLhVT4Z0HbYaUdwW_UsGCLDPlaCnm2
+    #access_key : <ACCESS_KEY>  # Optional
+    #secret_key : <SECRET_KEY>  # Optional
