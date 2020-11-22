@@ -12,6 +12,8 @@ lithops:
 
 serverless:
     backend: ibm_cf
+    runtime: khairulhabib/custom-runtime-fn:1.0.0
+    #runtime: cactusone/lithops-ce-3.8.5-2.2.2
     #runtime : ibmfunctions/lithops-ce-3.8.5-2.2.2:1.0.0
     #runtime_timeout: 600
     #runtime_memory: 256
@@ -20,8 +22,8 @@ serverless:
 ibm:
    iam_api_key: cLQhHWR28nlJaGOqo7j87L5akzoCizqQPvH_XooHHo3h
 
-#code_engine:
-    #kubectl_config: kubecontext.yaml
+code_engine:
+    kubectl_config: kubecontext.yaml
 
 ibm_cf:
     endpoint     : https://us-south.functions.cloud.ibm.com

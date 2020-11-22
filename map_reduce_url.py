@@ -32,19 +32,19 @@ iterdata = ['https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-wo
             'https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/vocab.nytimes.txt',
             'https://archive.ics.uci.edu/ml/machine-learning-databases/bag-of-words/vocab.pubmed.txt']
 
-config = {'lithops' : {'storage_bucket' : 'lithops-bucket-habib01',
-                        'storage':'ibm_cos',
-                        'mode':'serverless'},
-          'serverless':{'backend':'ibm_cf'},
-          'ibm':{'iam_api_key':'cLQhHWR28nlJaGOqo7j87L5akzoCizqQPvH_XooHHo3h'},
+# config = {'lithops' : {'storage_bucket' : 'lithops-bucket-habib01',
+#                         'storage':'ibm_cos',
+#                         'mode':'serverless'},
+#           'serverless':{'backend':'ibm_cf'},
+#           'ibm':{'iam_api_key':'cLQhHWR28nlJaGOqo7j87L5akzoCizqQPvH_XooHHo3h'},
 
-          'ibm_cf':  {'endpoint': 'https://us-south.functions.cloud.ibm.com',
-                      'namespace': 'Namespace-H5L',
-                      'namespace_id': '7fd17f8c-4a89-4d08-9529-f9aa7737c52d'},
+#           'ibm_cf':  {'endpoint': 'https://us-south.functions.cloud.ibm.com',
+#                       'namespace': 'Namespace-H5L',
+#                       'namespace_id': '7fd17f8c-4a89-4d08-9529-f9aa7737c52d'},
 
-          'ibm_cos': {'endpoint': 'https://s3.jp-tok.cloud-object-storage.appdomain.cloud',
-                      'private_endpoint': 'https://s3.private.jp-tok.cloud-object-storage.appdomain.cloud',
-                      'api_key': 'jlFa8a1ERFLryXzLhVT4Z0HbYaUdwW_UsGCLDPlaCnm2'}}
+#           'ibm_cos': {'endpoint': 'https://s3.jp-tok.cloud-object-storage.appdomain.cloud',
+#                       'private_endpoint': 'https://s3.private.jp-tok.cloud-object-storage.appdomain.cloud',
+#                       'api_key': 'jlFa8a1ERFLryXzLhVT4Z0HbYaUdwW_UsGCLDPlaCnm2'}}
 
 
 def my_map_function(url):
@@ -76,7 +76,7 @@ def my_reduce_function(results):
 
 
 if __name__ == "__main__":
-    fexec = lithops.FunctionExecutor(config=config)
+    fexec = lithops.FunctionExecutor()
     fexec.map_reduce(my_map_function, iterdata, my_reduce_function)
     result = fexec.get_result()
     print("Done!",result)
