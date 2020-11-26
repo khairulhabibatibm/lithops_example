@@ -12,8 +12,9 @@ lithops:
 
 serverless:
     backend: ibm_cf
-    runtime: khairulhabib/custom-runtime-fn:1.0.0
+    #runtime: khairulhabib/custom-runtime-fn:1.0.0
     #runtime: cactusone/lithops-ce-3.8.5-2.2.2
+    runtime: khairulhabib/lithops-runtime-datalake:1.0.0
     #runtime : ibmfunctions/lithops-ce-3.8.5-2.2.2:1.0.0
     #runtime_timeout: 600
     #runtime_memory: 256
